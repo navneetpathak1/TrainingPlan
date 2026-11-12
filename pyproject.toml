@@ -13,6 +13,7 @@ dependencies = [
     "asyncpg>=0.32.0",
     "fastapi[standard]>=0.162.2",
     "greenlet>=3.5.6",
+    "numpy>=2.5.4",
     "psycopg2-binary>=2.9.13",
     "pwdlib[argon2]>=0.3.1",
     "pydantic>=2.14.3",
@@ -29,3 +30,8 @@ training-plan = "training_plan:main"
 [build-system]
 requires = ["uv_build>=0.12.10,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
