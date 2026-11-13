@@ -21,8 +21,8 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from alembic import context
 
 
-import November_11_2026.models #noqa: F401
-from November_11_2026.database import Base
+import November_13_2026.models #noqa: F401
+from November_13_2026.database import Base
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config

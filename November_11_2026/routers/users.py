@@ -11,9 +11,8 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select, func
-from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
-
+from sqlalchemy.ext.asyncio import AsyncSession
 from database import get_db
 import models
 from schema import UserCreate, UserPublic
