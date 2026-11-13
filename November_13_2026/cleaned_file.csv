@@ -1,0 +1,32 @@
+id,tenant_id,source_id,title,category,content_hash,version,status,accepted_count,rejected_count
+2,acme_corp,SRC-5011,Invoice Q2 2025,invoice,fe5b4f12971702552c6b98ffe2ab740a90f4bd780971379da5291f15bc1edc61,1.0,complete,31,19
+14,wayne_ent,SRC-5315,  SERVICE INVOICE 208  ,invoice,e9e64c8a3d2aed2fdecf0d5d7a15dec5175c7d80f8fc30058b2e44584cdf1f58,1.0,complete,31,19
+38,wayne_ent,SRC-6442,  QUARTERLY REPORT Q2  ,report,ac9c75e2829cb3398e0754b24ab92577c8ef554edffcbe643f542c4e848d0449,1.0,complete,31,19
+33,wayne_ent,SRC-6617,Data Privacy Policy,policy,9f01e43dba93b2e04d194fba4d975edc582f80b6738738a9ea389738c9bbdf2c,1.0,complete,31,19
+6,acme_corp,SRC-4733,NDA - Client 987,contract,403de5de49dbc57daa34f01aa5d26958596e5d7ca5b7666e69f3fcf935254b34,1.0,complete,31,19
+34,acme_corp,SRC-1058,Onboarding Guide 368,manual,ec5654b3b77b5a9cbc4eb7b52f1fb4b5c3a139fc8400a731d2dcda99a617f396,3.0,complete,31,19
+42,stark_ind,SRC-9379,Payment Receipt 294,Receipt,8d927cdcc6ef6c040450cb3b8add3aa985da99934d631409ee1c6d44a4501469,2.0,complete,31,19
+29,GLOBEX,SRC-6147,User Manual v3,manual,d7e10268d23f4087c7497314a73889c1b0a7f901b2c9b6786adca8db17773a42,1.0,complete,31,19
+3,umbrella,SRC-5557,Data Privacy Policy,policy,9a6ea96b7090978b5d137cacf01702560c9d823bb456ef0f01824e9bc49d2135,1.0,complete,31,19
+9,acme_corp,SRC-6168,Leave Policy 2023,policy,d9df6dcd62da5ea1f09a26221d53acb62ededcf9a106f978cabc366d404111fe,3.0,complete,31,19
+39,globex,SRC-4269,Sales Proposal Q3,Proposal,91e05c92bc3c636b1a2110c7d539903483839b576c3d90974cd7f53137e72599,1.0,complete,31,19
+23,umbrella,SRC-5092,User Manual v4,manual,0286dd418990b3ca21c92e17a642bc931d83fc851cafd1687116e06b438435cc,3.0,complete,31,19
+11,stark_ind,SRC-7543,Expense Receipt 621,receipt,0a71b6ba673e247aa6ca758190538de74c547d57e82c77b1adc605c21d08f49a,1.0,complete,31,19
+17,wayne_ent,SRC-8787,Audit Report 640,report,12a3c0d6a692a1ab45da35c0cdc5998b8ad73c058830e4de4f742aee146dcf65,2.0,complete,31,19
+10,wayne_ent,SRC-1757,Leave Policy 2023,policy,88957f71108c0a495f231bb0801afcad1ff8b7c62a3fe8462f67b7d9743cc6f2,3.0,complete,31,19
+7,initech,SRC-6820,Annual Report 2025,report,a6397547b051d5ecd32b6eb623b989afb07f7789cf20eb6cede7ac06a581f5cc,4.0,complete,31,19
+34,acme_corp,SRC-1058,Onboarding Guide 368,manual,bde27b3483864ce8261c85d4e5fed3b89520193a82ed72587237505d8d8ae054,2.0,complete,31,19
+4,acme_corp,SRC-7224,Service Agreement 2024,contract,be098a9a417357c05d6c952499e8c3a34a07019cd153a3728bd41d3cb3dc08b9,1.0,complete,31,19
+35,acme_corp,SRC-2232,Service Invoice 136,invoice,8327bed073eef6a08ed13d45eb7c689b8daa11e31fc162712c4e977e3289aa24,3.0,complete,31,19
+18,umbrella,SRC-7118,Onboarding Guide 353,manual,470499bf7f4ca0650e5fe5505d38e38a47ab031d5fdb006065f99f0f890e209b,1.0,complete,31,19
+2,acme_corp,SRC-2535,Invoice Q2 2025,invoice,fe5b4f12971702552c6b98ffe2ab740a90f4bd780971379da5291f15bc1edc61,1.0,complete,31,19
+12,wayne_ent,SRC-7916,Audit Report 490,report,3fe8483d0ff466bb4e84dfe575c10603efdd5a222688ae0f1049aebdcc184192,3.0,complete,31,19
+15,initech,SRC-3646,Audit Report 431,report,66a9cecc543a381b608af1e40a63efbdbf93dcba6fe283faad14cd18b44ad903,1.0,complete,31,19
+7,initech,SRC-6820,Annual Report 2025,report,9ad1fef4351b38d57f4fd491bc4bdbe2ece733bcac033ae9b878387a0c51940a,3.0,complete,31,19
+10,wayne_ent,SRC-9179,Leave Policy 2023,policy,88957f71108c0a495f231bb0801afcad1ff8b7c62a3fe8462f67b7d9743cc6f2,3.0,complete,31,19
+16,acme_corp,SRC-4946,Security Policy v1,policy,2f1e2bba7ad7bb77eba2a1590a7756ec83338f8812b90aebf9a7ea283a502dd2,1.0,complete,31,19
+32,wayne_ent,SRC-2697,User Manual v3,manual,1875e4a8a9d7aeb0c22d1694c50ce15f9f7721463a90bde81798a138638e9450,1.0,complete,31,19
+13,wayne_ent,SRC-2876,Service Invoice 448,invoice,b79bd503461518f85e0e700972f975fef83cb178f6c8e4261c38cdcaa4b3fc42,2.0,complete,31,19
+41,acme_corp,SRC-5279,Invoice Q3 2023,invoice,c6333d2042710b631547e97e1c6b5d926006dfc6bf83667aca3ca6145500c4db,1.0,complete,31,19
+30,ACME_CORP,SRC-8508,Master Contract v1,contract,daa2ba24881084e5e578a5acc8ee4159450a0b3cf78c3219b2e46e1d34f964ff,1.0,complete,31,19
+31,globex,SRC-7054,NDA - Client 953,contract,e8f662b6101e3972dff716f64996ac205d97c826b6062cc07419976496dbeb63,1.0,complete,31,19

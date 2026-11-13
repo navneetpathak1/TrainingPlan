@@ -104,3 +104,16 @@ async def update_documents(source_id:str, db:Annotated[AsyncSession, Depends(get
     await db.commit()
     return {"message": "Document deleted successfully"}
 
+
+
+
+@router.get("/import_jobs", status_code=status.HTTP_200_OK)
+async def get_import_jobs(db: Annotated[AsyncSession, Depends(get_db)]):
+    response = await db.execute(select(models.ImportJobs))
+    data = response.scalars().all()
+
+    if not data:
+        raise HTTPException(status_code=status.HTTP_204_NO_CONTENT, detail="Import jobs is empty")
+
+    return data
+
