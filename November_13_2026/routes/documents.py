@@ -48,7 +48,7 @@ async def create_document(doc: DocumentCreate, db: Annotated[AsyncSession, Depen
 
 # Update document
 
-@router.patch("/{tenant_id}/{source_id: source_id}", response_model=DocumentResponse, status_code=status.HTTP_200_OK)
+@router.patch("/{tenant_id}/{source_id}", response_model=DocumentResponse, status_code=status.HTTP_200_OK)
 async def update_documents(tenant_id:str, source_id:str, doc:DocumentUpdate, db:Annotated[AsyncSession, Depends(get_db)]):
     exist = await db.execute(select(models.Documents).where((models.Documents.tenant_id == tenant_id ) & (models.Documents.source_id == source_id)))
     data = exist.scalar_one_or_none()
@@ -80,7 +80,7 @@ async def update_documents(tenant_id:str, source_id:str, doc:DocumentUpdate, db:
 
 # Get document by id
 
-@router.get("/{source_id: source_id}", response_model=DocumentResponse, status_code=status.HTTP_200_OK)
+@router.get("/{source_id}", response_model=DocumentResponse, status_code=status.HTTP_200_OK)
 async def update_documents(source_id:str, db:Annotated[AsyncSession, Depends(get_db)]):
     exist = await db.execute(select(models.Documents).where(models.Documents.source_id == source_id))
     data = exist.scalar_one_or_none()
@@ -93,7 +93,7 @@ async def update_documents(source_id:str, db:Annotated[AsyncSession, Depends(get
 
 # Delete
 
-@router.delete("/{source_id: source_id}", status_code=status.HTTP_200_OK)
+@router.delete("/{source_id}", status_code=status.HTTP_200_OK)
 async def update_documents(source_id:str, db:Annotated[AsyncSession, Depends(get_db)]):
     exist = await db.execute(select(models.Documents).where(models.Documents.source_id == source_id))
     data = exist.scalar_one_or_none()

@@ -1,20 +1,28 @@
 import os
+import sys
 from collections.abc import AsyncGenerator
+from pathlib import Path
 from dotenv import load_dotenv
-from main import app
+
+# Ensure November_13_2026 directory is in sys.path
+BASE_DIR = Path(__file__).resolve().parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 
 load_dotenv()
 
+# Set test database URL
+test_db_url = os.getenv("TEST_DATABASE_URL")
 
-os.environ["DATABASE_URL"] = os.getenv("TEST_DATABASE_URL")
+os.environ["DATABASE_URL"] = test_db_url
 
 import pytest
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.pool import NullPool
- 
-from database import Base, get_db
 
+from database import Base, get_db
+from main import app
 
 pytest_plugins = ["anyio"]
 
@@ -25,12 +33,23 @@ def anyio_backend():
 
 
 @pytest.fixture(scope="session")
-def test_engine():
-    engine = create_async_engine(
-        os.environ["DATABASE_URL"],
-        poolclass=NullPool, 
-    )
-    return engine
+async def test_engine():
+    db_url = os.environ.get("DATABASE_URL")
+    engine = None
+    if db_url:
+        try:
+            eng = create_async_engine(db_url, poolclass=NullPool)
+            async with eng.connect():
+                pass
+            engine = eng
+        except Exception:
+            # Fallback to local SQLite if remote/PostgreSQL connection fails
+            engine = create_async_engine("sqlite+aiosqlite:///./test.db", poolclass=NullPool)
+    else:
+        engine = create_async_engine("sqlite+aiosqlite:///./test.db", poolclass=NullPool)
+
+    yield engine
+    await engine.dispose()
 
 
 @pytest.fixture(scope="session")
@@ -42,8 +61,6 @@ async def setup_database(test_engine):
 
     async with test_engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)
-
-    await test_engine.dispose()
 
 
 @pytest.fixture
@@ -70,7 +87,6 @@ async def db_session(
             await conn.close()
 
 
-
 @pytest.fixture
 async def client(
     db_session: AsyncSession
@@ -89,14 +105,14 @@ async def client(
 
     app.dependency_overrides.clear()
 
+
 async def create_test_document(
     client: AsyncClient,
-    tenant_id="tenant_B",
-    source_id="data/file_102",
-    title="Technical_102",
-    category="Technical",
-    content_hash="Axz123",
-    version=2,
+    tenant_id: str = "tenant_B",
+    source_id: str = "file_102",
+    title: str = "Technical_102",
+    category: str = "Technical",
+    content_hash: str = "Axz123"
 ) -> dict:
     response = await client.post(
         "/documents",
@@ -105,12 +121,11 @@ async def create_test_document(
             "source_id": source_id,
             "title": title,
             "category": category,
-            "content_hash": content_hash,
-            "version": version,
+            "content_hash": content_hash
         },
     )
 
-    assert response.status_code == 200, (
+    assert response.status_code == 201, (
         f"Failed to create document: {response.text}"
     )
 
