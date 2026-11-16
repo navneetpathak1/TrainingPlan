@@ -1,3 +1,6 @@
 .env
 .venv
 __pycache__/
+.cache
+cbx-indic-pii-extractor-17M/
+cbx-indic-pii-extractor-17M
