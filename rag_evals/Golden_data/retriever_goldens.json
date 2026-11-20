@@ -1,0 +1,32 @@
+[
+  {
+    "id": "g001",
+    "query": "What is Generative AI and how does it differ from traditional AI systems?",
+    "ideal_answer": "Generative AI is a class of algorithms and models that can create new content such as text, images, audio, video and code. Unlike traditional AI systems that are designed to classify, predict or recommend, generative models learn the underlying patterns of data and produce entirely novel outputs that mirror the statistical properties of their training sets.",
+    "source": "a2.pdf, Page: 7"
+  },
+  {
+    "id": "g002",
+    "query": "Who introduced Generative Adversarial Networks (GANs) and in which year?",
+    "ideal_answer": "GANs were introduced by Ian Goodfellow and colleagues in 2014. They generate photorealistic images by pitting a generator against a discriminator in a competitive training process.",
+    "source": "a2.pdf, Page: 7"
+  },
+  {
+    "id": "g003",
+    "query": "Which paper introduced the Transformer architecture and when was it published?",
+    "ideal_answer": "The Transformer architecture was described in the 2017 paper 'Attention Is All You Need' by Vaswani et al. It laid the groundwork for large-scale language models.",
+    "source": "a2.pdf, Page: 7"
+  },
+  {
+    "id": "g004",
+    "query": "What is the key distinction between generative and discriminative models?",
+    "ideal_answer": "Generative models model the full data distribution P(X), while discriminative models model the conditional probability P(Y|X) for a known class Y.",
+    "source": "a2.pdf, Page: 9"
+  },
+  {
+    "id": "g005",
+    "query": "What are latent space and embeddings in generative AI?",
+    "ideal_answer": "Latent space is a compressed, lower-dimensional representation of data learned by a model's encoder; points in it correspond to abstract features, and the decoder or generator maps them back to the original data domain. Embeddings are dense vector representations of discrete entities (such as words or image patches) that encode semantic relationships.",
+    "source": "a2.pdf, Page: 9"
+  }
+]
